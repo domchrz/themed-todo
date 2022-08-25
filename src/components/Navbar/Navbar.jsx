@@ -10,7 +10,6 @@ export default function Navbar({ dispatch }) {
   const ref = useRef();
 
   useEffect(() => {
-    console.log(ref.current);
     const listener = e => {
       if (ref.current.contains(e.target)) return;
       setShowDropdown(false);
@@ -19,7 +18,7 @@ export default function Navbar({ dispatch }) {
     window.addEventListener('click', listener);
 
     return () => window.removeEventListener('click', listener);
-  }, [showDropdown]);
+  }, []);
 
   return (
     <Nav>
